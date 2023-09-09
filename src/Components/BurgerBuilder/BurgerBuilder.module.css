@@ -1,0 +1,34 @@
+.burgerBuilder{
+    /* margin-top: 65px; */
+    margin-top: 100px;
+}
+.paragraph{
+    padding: 19px 0;
+    text-align: center;
+    font-size: 1.875rem;
+    font-weight: bold;
+    width: 80%;
+    margin: auto;
+    background-color: chocolate;
+    border-radius: 10px;
+}
+
+
+@media (min-width: 800px) and (min-height: 400px) {
+    .paragraph {
+        width: 50%;
+       
+    }
+
+}
+
+
+/* @media (min-width: 700px) and (min-height: 401px) {
+
+    .divBuildControl{
+
+        width: 65%;
+    }
+}
+
+ */

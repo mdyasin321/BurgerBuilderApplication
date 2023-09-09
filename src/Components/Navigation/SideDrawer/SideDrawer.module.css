@@ -1,0 +1,23 @@
+.sideDrawer{
+    position: fixed;
+    width: 280px;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 500;
+    background-color: white;
+    padding: 15px 20px;
+    transition: transform 0.3s ease-out;
+}
+
+.Open{
+    transform: translateX(0);
+}
+
+.Close{
+    transform: translateX(-100%);
+}
+
+.Logo{
+    height: 11%;
+}

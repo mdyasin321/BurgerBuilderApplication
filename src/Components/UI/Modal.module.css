@@ -1,0 +1,54 @@
+.modal{
+    position: fixed;
+    top: 25vh;
+    left: 18%;
+    width: 55%;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 14px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    z-index: 30;
+    transition: transform 3s ease-out;
+    /* animation: slide-down 300ms ease-out forwards; */
+
+    animation-name: slideDown;
+    animation-duration: 0.3s;
+    animation-direction: normal;
+
+
+}
+
+
+
+
+
+ /* here after completeing the animation from top : 0vh and left :33%  to top :25vh and left :35 % , then the element restores back to
+   the original style as  written under .modal class  */
+
+   @keyframes slideDown {
+    0%   { top:0vh; left :18%;}
+
+    100% {top:25vh; left: 18%;}
+  }
+
+
+
+ 
+
+/* //for laptop screen */
+
+@media (min-width: 500px) and (min-height: 400px) {
+    .modal {
+        width: 30%;
+        left : 33%;
+
+    }
+
+    @keyframes slideDown {
+        0%   { top:0vh; left :33%;}
+    
+        100% {top:25vh; left: 33%;}
+      }
+    
+}
+

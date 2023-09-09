@@ -1,0 +1,67 @@
+.buildControls{
+    background-color: #d8880ffa;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    width: 90%;
+    border-radius: 20px;
+    margin: 20px auto;
+
+}
+
+.Order{
+    padding:10px;
+    margin: 30px 0;
+    cursor: pointer;
+    background-color: brown;
+    color: white;
+    border-radius: 5px;
+}
+
+
+.Order:disabled {
+    background-color: #AC9980;
+    border: 1px solid #7E7365;
+    color: #ccc;
+    cursor: not-allowed;
+}
+
+.currentPrice{
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 0;
+}
+
+.divBuildControl{
+
+    width: 90%;
+}
+
+
+
+
+@media (min-width: 800px) and (min-height: 400px) {
+    .buildControls {
+        width: 60%;
+       
+    }
+    .divBuildControl{
+
+        width: 55%;
+    }
+}
+
+
+@media (min-width: 700px) and (min-height: 401px) {
+    /* .buildControls {
+        width: 60%;
+       
+    } */
+    .divBuildControl{
+
+        width: 65%;
+    }
+}
+
+

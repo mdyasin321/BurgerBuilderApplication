@@ -1,0 +1,40 @@
+.ingredientRow{
+    display: flex;
+    justify-content: space-between;
+    /* width: 100%; */
+    padding: 30px 30px 0 30px;
+    /* width: 30%;
+    margin: auto; */
+
+}
+.label{
+    margin:5px 0;
+    width: 80px;
+}
+
+.add{
+     padding: 0 21px;
+     cursor: pointer;
+     background-color: brown;
+     color: white;
+     border-radius: 5px;
+    /* margin: 0 20px;  */
+
+}
+
+.remove{
+    cursor: pointer;
+
+    background-color: brown;
+    color: white;
+    border-radius: 5px;
+
+}
+
+
+.ingredientRow .remove:disabled {
+    background-color: #AC9980;
+    border: 1px solid #7E7365;
+    color: #ccc;
+    cursor: not-allowed;
+}

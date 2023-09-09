@@ -1,0 +1,14 @@
+.Toolbar{
+    box-sizing: border-box;
+    padding: 0 20px;
+    width: 100%;
+    height: 56px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background-color: #993e05;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

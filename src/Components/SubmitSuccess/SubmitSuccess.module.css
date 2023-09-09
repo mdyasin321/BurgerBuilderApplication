@@ -1,0 +1,10 @@
+.submitSuccess{
+
+    color: ghostwhite;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: rgb(12, 220, 126);
+    font-size: 1.1rem;
+    font-weight: bold;
+
+}

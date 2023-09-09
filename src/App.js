@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React ,{useState} from "react";
+import Layout from "./Components/Layout/Layout";
+import BurgerBuilder from "./Components/BurgerBuilder/BurgerBuilder";
+import BurgerIngredientProvider from "./Store/BurgerIngrdients-context/BurgerIngredientProvider";
 
-function App() {
+const App = () => {
+  const [showModal,setShowModal]= useState(false)
+
+  const showModalHandler =()=>{
+
+    setShowModal((prevState)=>{
+      console.log("inside showModal handler")
+      return ( 
+        !prevState
+      )
+    })
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <BurgerIngredientProvider>
+        <Layout  showModalHandler={showModalHandler}>
+          <BurgerBuilder showModalHandler={showModalHandler}  modalShow={showModal}></BurgerBuilder>
+        </Layout>
+      </BurgerIngredientProvider>
+    </>
   );
-}
+};
 
 export default App;

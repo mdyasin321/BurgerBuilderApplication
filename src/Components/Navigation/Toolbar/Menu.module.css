@@ -1,0 +1,18 @@
+.menu{
+    display: flex;
+    flex-direction: column;
+    background-color: #993e05;
+    width: 60px;
+    align-items: center;
+
+
+}
+
+.div{
+    margin: 5px;
+    width: 65%;
+    height: 20%;
+    padding: 2px;
+    border-radius: 5px;
+    background-color: white;
+}
