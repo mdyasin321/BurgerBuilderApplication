@@ -22,7 +22,8 @@ const OrderSummary = (props) => {
       <ul>{items}</ul>
       <p><strong>Total Price :- ${ctx.totalPrice.toFixed(2)}</strong></p>
       {ctx.ingredients.length>0 ?  <p>Continue to checkout ?</p>  : <p>No Items Added</p>}
-      <Button  clicked={props.closeModalOrShowModalHandler} btnType='Danger'>CANCEL</Button>
+      {/* //// */}
+      <Button  clicked={props.closeBackdropAndModal} btnType='Danger'>CANCEL</Button>
       {ctx.ingredients.length>0 && <Button btnType='Success' clicked={props.showSubmitSuccess} >CONTINUE</Button>} 
     </div>
   );

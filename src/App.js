@@ -1,25 +1,44 @@
-import React ,{useState} from "react";
+import React, { useState } from "react";
 import Layout from "./Components/Layout/Layout";
 import BurgerBuilder from "./Components/BurgerBuilder/BurgerBuilder";
 import BurgerIngredientProvider from "./Store/BurgerIngrdients-context/BurgerIngredientProvider";
 
 const App = () => {
-  const [showModal,setShowModal]= useState(false)
+  const [showModal, setShowModal] = useState(false);
+  const [showSideDrawer, setShowSideDrawer] = useState(false);
 
-  const showModalHandler =()=>{
+  const showModalHandler = () => {
+    HideshowSideDrawerHandler();
 
-    setShowModal((prevState)=>{
-      console.log("inside showModal handler")
-      return ( 
-        !prevState
-      )
-    })
-  }
+    setShowModal(true);
+  };
+
+  const HideshowModalHandler = () => {
+    setShowModal(false);
+  };
+
+  const showSideDrawerHandler = () => {
+    setShowSideDrawer(true);
+  };
+
+  const HideshowSideDrawerHandler = () => {
+    setShowSideDrawer(false);
+  };
+
   return (
     <>
       <BurgerIngredientProvider>
-        <Layout  showModalHandler={showModalHandler}>
-          <BurgerBuilder showModalHandler={showModalHandler}  modalShow={showModal}></BurgerBuilder>
+        <Layout
+          showSideDrawer={showSideDrawer}
+          showSideDrawerHandler={showSideDrawerHandler}
+          HideshowSideDrawerHandler={HideshowSideDrawerHandler}
+          showModalHandler={showModalHandler}
+        >
+          <BurgerBuilder
+            showModalHandler={showModalHandler}
+            hideShowModalHandler={HideshowModalHandler}
+            modalShow={showModal}
+          ></BurgerBuilder>
         </Layout>
       </BurgerIngredientProvider>
     </>

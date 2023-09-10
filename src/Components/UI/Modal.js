@@ -28,7 +28,7 @@ const Modal=(props)=>{
     return (
         <React.Fragment>
 
-            { createPortal( <Backdrop clicked={props.showOrCloseBackdrop}></Backdrop>, document.getElementById("backdrop-root"))}
+            { createPortal( <Backdrop clicked={props.closeBackdropAndModal}></Backdrop>, document.getElementById("backdrop-root"))}
             { createPortal(<ModalDescription>{props.children}</ModalDescription>, document.getElementById("modaloverlay-root"))}
                                                      {/* //OR */}
             {/* {ReactDOM.createPortal(<ModalDescription>{props.children}</ModalDescription>, document.getElementById("modaloverlay-root"))}                                          */}

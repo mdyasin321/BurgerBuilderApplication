@@ -1,4 +1,4 @@
-import React , {useState} from "react";
+import React, { useState } from "react";
 import Burger from "../Burger/Burger";
 import BuildControls from "../BuildConrols/BuildControls";
 import OrderSummary from "../OrderSummary/OrderSummary";
@@ -7,23 +7,18 @@ import classes from "./BurgerBuilder.module.css";
 import SubmitSucess from "../SubmitSuccess/SubmitSuccess";
 
 const BurgerBuilder = (props) => {
+  const [showSubmitSuccess, setShowSubmitSuccess] = useState(false);
 
-  const[showSubmitSuccess, setShowSubmitSuccess]=useState(false);
+  const showSubmitSuccessHandler = () => {
+    // first closing the cart modal before showing the submitSuccessModal
+    props.hideShowModalHandler();
 
-const showSubmitSuccessHandler=()=>{
+    setShowSubmitSuccess(true);
+  };
 
-  // first closing the cart modal before showing the submitSuccessModal
-  props.showModalHandler();
-
-  setShowSubmitSuccess(true);
-
-}
-
-const HideSubmitSuccessHandler=()=>{
-
-  setShowSubmitSuccess(false);
-
-}
+  const HideSubmitSuccessHandler = () => {
+    setShowSubmitSuccess(false);
+  };
 
   return (
     <div className={classes.burgerBuilder}>
@@ -31,23 +26,25 @@ const HideSubmitSuccessHandler=()=>{
       by using this technique to show modal, I was unable to use perform animations */}
 
       {props.modalShow === true && (
-        <Modal showOrCloseBackdrop={props.showModalHandler}>
+        <Modal closeBackdropAndModal={props.hideShowModalHandler}>
           {
-            <OrderSummary  showSubmitSuccess={showSubmitSuccessHandler}
-              closeModalOrShowModalHandler={props.showModalHandler}
+            <OrderSummary
+              showSubmitSuccess={showSubmitSuccessHandler}
+              closeBackdropAndModal={props.hideShowModalHandler}
             />
           }
         </Modal>
       )}
-      { showSubmitSuccess===true && <Modal showOrCloseBackdrop={HideSubmitSuccessHandler}  >{<SubmitSucess></SubmitSucess>}</Modal>}
 
-      
+      {showSubmitSuccess === true && (
+        <Modal closeBackdropAndModal={HideSubmitSuccessHandler}>
+          {<SubmitSucess></SubmitSucess>}
+        </Modal>
+      )}
 
       <Burger></Burger>
       <p className={classes.paragraph}>Burger Builder Controller</p>
-      <BuildControls
-        closeModalOrShowModalHandler={props.showModalHandler}
-      ></BuildControls>
+      <BuildControls showModalHandler={props.showModalHandler}></BuildControls>
     </div>
   );
 };

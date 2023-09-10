@@ -8,6 +8,9 @@
     background-color: white;
     padding: 15px 20px;
     transition: transform 0.3s ease-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .Open{
@@ -19,5 +22,25 @@
 }
 
 .Logo{
+    margin: 15px 0;
     height: 11%;
+    cursor: pointer;
+}
+
+.sideDrawerHeader{
+
+    width: 100%;
+    background-color: chocolate;
+    margin-bottom: 15px;
+    text-align: center;
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: white;
+
+}
+.sideDrawerHeader p {
+    margin: 0;
 }
