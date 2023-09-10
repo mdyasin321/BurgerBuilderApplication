@@ -33,11 +33,22 @@ const BuildControl =({id, label,count,price})=>{
        ctx.removeIngredeientHandler(ingredient.id)
     }
 
+    let disabledInfo=true;
+
+    for (let x of ctx.ingredients) {
+
+        if(x.id===id && x.count>0){
+
+            disabledInfo=false;
+        }
+        
+      }
+
     return (
         <div className={classes.ingredientRow}>
             <h2 className={classes.label}>{label}</h2>
             <button  className={classes.add} onClick={addingIngredeient}>Add</button>
-            <button className={classes.remove} onClick={removingIngredeient}  disabled={ctx.ingredients.length<=0}>Remove</button>
+            <button className={classes.remove} onClick={removingIngredeient}  disabled={disabledInfo}>Remove</button>
         </div>
 
     )
