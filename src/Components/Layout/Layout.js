@@ -9,6 +9,7 @@ const Layout = (props) => {
         <Toolbar
           showSideDrawerHandler={props.showSideDrawerHandler}
           showModalHandler={props.showModalHandler}
+          
         ></Toolbar>
 
         {/* here I am showing sideDrawer conditionaly using css classes  */}
